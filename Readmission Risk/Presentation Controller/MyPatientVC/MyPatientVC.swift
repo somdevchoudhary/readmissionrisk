@@ -58,11 +58,7 @@ class MyPatientVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        print("Will appear")
-    }
-
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -181,7 +177,7 @@ class MyPatientVC: UIViewController {
                 DispatchQueue.main.async {
                     KVNProgress.dismiss()
                 }
-                print(dict)
+               // print(dict)
                 
                 if dict.count > 0
                 {
@@ -203,7 +199,7 @@ class MyPatientVC: UIViewController {
                             return nameDict["Name"] as! String
                         })
                         
-                        print("nameArray",nameArray)
+                       // print("nameArray",nameArray)
                         
                         self.selectedIndexPath = IndexPath(row:0,section:0)
                         
@@ -221,7 +217,7 @@ class MyPatientVC: UIViewController {
             }) { (error, requestName) in
                 
                 //KVNProgress.dismiss()
-                print(error.localizedDescription)
+               // print(error.localizedDescription)
                 
                 DispatchQueue.main.async {
                     KVNProgress.dismiss()

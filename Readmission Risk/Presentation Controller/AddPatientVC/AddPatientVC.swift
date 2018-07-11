@@ -80,7 +80,7 @@ class AddPatientVC: UIViewController {
         
         if !AppDelegate.getDelegate().patientDicSelected.isEmpty
         {
-            print("get patient",AppDelegate.getDelegate().patientDicSelected)
+           // print("get patient",AppDelegate.getDelegate().patientDicSelected)
             
             let selectedDic = AppDelegate.getDelegate().patientDicSelected!
             
@@ -670,7 +670,7 @@ class AddPatientVC: UIViewController {
             
             if flagStatus
             {
-                print("API")
+               // print("API")
                 
                 let checkInternet = AppDelegate.getDelegate() .networkStatus()
                 
@@ -703,13 +703,13 @@ class AddPatientVC: UIViewController {
                     
                     let paramsDict = ["patients":[["Height":self.heightStr!,"Conditions":self.conditionsArr!,"Cross Clamp Time":self.crossClampStr,"Weight":self.weightStr!,"Race":self.raceStr,"Ejection Fraction":self.ejectionFractionStr,"Status":self.statusStr,"Chronic Lung Disease":self.clungStr,"Name":self.nameStr!,"Surgery Date":self.surgeryDateStr!,"Post-Operative Ventilation Time":self.popVTStr,"Incidence":self.incidenceStr,"Discharge Location":self.dischargeStr,"Aortic Insufficiency":self.aorticStr,"Last Creatinine Level":self.lastCreatineStr,"Tobacco Use":self.tobaccoStr,"Perfusion Time":self.perfusionTimeStr,"Last A1C Level":self.lastA1Str,"Age":self.ageStr!,"Gender":self.genderStr,"Skin Cut Start Time":self.startCutStr,"Admission Source":self.admissionStr,"Cardiac Presentation at Admission":self.cpaaStr,"Arrival Date":self.arrivalDateStr,"Cardiogenic Shock":self.cshockStr,"Skin Cut Stop Time":self.stopCutStr,"Resuscitation":self.resuscitationStr,"Number of Diseased Coronary Vessels":self.nodcvStr,"Diabetes Control":self.diabetesStr,"Aortic Occlusion":self.aorticOcclusionStr,"Mitral Insufficiency":self.mitralStr]]] as [String:Any]
                     
-                    print("paramdic",paramsDict)
+                    //print("paramdic",paramsDict)
                     
                     let caller = ServiceCallerSwift.init()
                     
                     caller.makePostAPI(paramsDict, requestName: "AddPatient", urlString: kAddPatient, postString: "", success: { (dict, requestName) in
                         KVNProgress.dismiss()
-                        print("dictttt",dict)
+                       // print("dictttt",dict)
                         
                         if let statusSubmitted = dict["submission status"] as? String
                         {
@@ -723,7 +723,7 @@ class AddPatientVC: UIViewController {
                     }) { (error, reequestName) in
                         
                         KVNProgress.dismiss()
-                        print(error.localizedDescription)
+                        //print(error.localizedDescription)
                         
                         DispatchQueue.main.async {
                             self.showNormalAlertWithTitle(kAlertTitle, message: "Please try again later")
